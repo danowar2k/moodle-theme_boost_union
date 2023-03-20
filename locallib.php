@@ -922,8 +922,9 @@ function theme_boost_union_fontawesome_checkin() {
     // Purge the existing cache values as we will refill the cache now.
     $cache->purge();
 
+    global $PAGE;
     // Get FontAwesome version config.
-    $faconfig = get_config('theme_boost_union', 'fontawesomeversion');
+    $faconfig = $PAGE->theme->settings->fontawesomeversion;
 
     // If a FontAwesome version is enabled.
     if ($faconfig != THEME_BOOST_UNION_SETTING_FAVERSION_NONE && $faconfig != null) {
